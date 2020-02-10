@@ -16,7 +16,7 @@ router.post('/api/tasks', async (req, res) => {
     const { title } = req.body;
     const tasks = new Task({ title });
     await tasks.save();
-    res.json({ status: 'Carpeta guardada' })
+    res.json({ status: 'Tarea guardada' })
 })
 
 

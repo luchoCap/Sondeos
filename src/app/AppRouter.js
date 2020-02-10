@@ -10,7 +10,7 @@ class AppRouter extends React.Component {
             <div>
                 <Router>
                     <div>
-                        <Route exact path="/home" component={EditWork} />
+                        <Route exact path="/" component={EditWork} />
                     </div>
                 </Router>
             </div>

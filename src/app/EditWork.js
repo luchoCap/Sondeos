@@ -8,7 +8,8 @@ class EditWork extends Component {
         super(props);
         this.state = {
             title: '',
-            tasks: []
+            tasks: [],
+            display: ""
 
         }
 
@@ -26,8 +27,15 @@ class EditWork extends Component {
             .then(res => res.json())
             .then(data => {
                 this.setState({ tasks: data })
-                console.log(this.state.tasks)
+                if (this.state.tasks.length == 0) {
+                    this.setState({ display: "none" })
+                } else {
+                    this.setState({ display: "" })
+                }
             })
+            .catch(err => console.error(err))
+
+
     }
 
     componentDidMount() {
@@ -61,6 +69,7 @@ class EditWork extends Component {
                     this.fetchTasks()
 
                 })
+                .catch(err => console.error(err))
 
         }
     }
@@ -123,8 +132,8 @@ class EditWork extends Component {
                                     <form onSubmit={this.addTask} id="miForm" name="miForm" style={{ marginTop: '1em' }}>
                                         <div className="row">
                                             <div className="input-field col s12">
-                                                <input name="title" type="text" placeholder="Add Task" onChange={this.handleChange} ></input>
-                                                <button type="submit" className="btn light-blue darken-4">Agregar</button>
+                                                <input name="title" type="text" placeholder="Descripción" onChange={this.handleChange} ></input>
+                                                <button type="submit" className="btn light-blue darken-4">Agregar Tarea</button>
                                             </div>
                                         </div>
 
@@ -132,7 +141,7 @@ class EditWork extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col s12 m12 l7" >
+                        <div className="col s12 m12 l7" style={{ display: this.state.display }} >
 
                             <ListTasks tasks={this.state.tasks} deleteTask={this.deleteTask} ></ListTasks>
                         </div>

@@ -14,7 +14,7 @@ class ListTasks extends Component {
                     <table className="striped">
                         <thead>
                             <tr>
-                                <th style={{ fontFamily: 'auto', fontSize: '1.2em' }}> Nombre </th>
+                                <th style={{ fontFamily: 'auto', fontSize: '1.2em' }}> Descripción Tareas</th>
                                 <th></th>
                             </tr>
                         </thead>

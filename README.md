@@ -10,7 +10,7 @@ NodeJS version 12.3.1
 Para arrancar el proyecto se tiene que ejecutar el bash init.sh:
 ./init.sh
 
-Para ingresar desde el navegador hay que acceder a: localhost:3000/#/home
+Para ingresar desde el navegador hay que acceder a: localhost:3000/#/
 
 Las dependencias usadas fueron:
 
